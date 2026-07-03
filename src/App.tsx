@@ -1,10 +1,12 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
 // ─── App ─────────────────────────────────────────────────────────────────────
 // Routes added here as each page is built.
-// Protected routes and auth guard will be added once the auth store is wired.
+// TODO: wrap /dashboard (and future protected pages) with an auth guard once
+//       the token-refresh flow is finalised.
 
 export default function App() {
   return (
@@ -13,9 +15,7 @@ export default function App() {
       <Route path="/"          element={<Navigate to="/register" replace />} />
       <Route path="/register"  element={<Register />} />
       <Route path="/login"     element={<Login />} />
-
-      {/* Placeholder — will be replaced with real protected page */}
-      <Route path="/dashboard" element={<div>Dashboard — auth required</div>} />
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   );
 }

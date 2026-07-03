@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 import FormInput from '../common/FormInput';
+import PasswordInput from '../common/PasswordInput';
 import SparkleButton from '../common/SparkleButton';
 import { useLogin } from '../../hooks/useAuth';
 import {
@@ -64,14 +64,12 @@ export default function LoginForm() {
         required
       />
 
-      <FormInput
+      <PasswordInput
         label="Password"
         name="password"
-        type="password"
         value={form.password}
         onChange={handleChange('password')}
         autoComplete="current-password"
-        startIcon={<LockOutlinedIcon fontSize="small" />}
         required
       />
 

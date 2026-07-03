@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import LockResetOutlinedIcon from '@mui/icons-material/LockResetOutlined';
 
 import FormInput from '../common/FormInput';
+import PasswordInput from '../common/PasswordInput';
 import SparkleButton from '../common/SparkleButton';
 import { useRegister } from '../../hooks/useAuth';
 import {
@@ -92,25 +91,21 @@ export default function RegisterForm() {
         required
       />
 
-      <FormInput
+      <PasswordInput
         label="Password"
         name="password"
-        type="password"
         value={form.password}
         onChange={handleChange('password')}
         autoComplete="new-password"
-        startIcon={<LockOutlinedIcon fontSize="small" />}
         required
       />
 
-      <FormInput
+      <PasswordInput
         label="Confirm Password"
         name="confirm"
-        type="password"
         value={form.confirm}
         onChange={handleChange('confirm')}
         autoComplete="new-password"
-        startIcon={<LockResetOutlinedIcon fontSize="small" />}
         required
       />
 
